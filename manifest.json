@@ -2,7 +2,15 @@
     "name": "endexapp",
     "short_name": "file organizer",
     "start_url": "/",
-    "id": "/",
+    "description": "A brief description of your app",
+    "display": "standalone",
+    "orientation": "portrait",
+    "launch_handler": {
+        "client_mode": "auto"
+    },
+    "categories": ["utilities", "productivity"],
+    "dir": "ltr",
+    "iarc_rating_id": "eCM4Jk8uG",
     "icons": [
         {
             "src": "icon-192.png",
@@ -15,5 +23,6 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "scope": "/"
 }
