@@ -1,0 +1,23 @@
+{
+  "name": "Easy File Organizer Pro",
+  "short_name": "File Organizer",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f9fafc",
+  "theme_color": "#0366d6",
+  "description": "Drag and drop your files below and organize them instantly.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait-primary",
+  "scope": "."
+}

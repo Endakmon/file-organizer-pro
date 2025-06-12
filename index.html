@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Easy File Organizer Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0366d6">
+</head>
+<body>
+  <header>
+    <h1 id="app-title">Easy File Organizer Pro</h1>
+    <p id="app-desc">Drag and drop your files below and organize them instantly.</p>
+  </header>
+  <main>
+    <div id="drop-area">
+      <form class="my-form">
+        <input type="file" id="fileElem" multiple accept="*/*">
+        <label class="button" for="fileElem" id="select-files-btn">Select files</label>
+      </form>
+      <div id="options">
+        <label id="organize-by-label">Organize by:
+          <select id="organize-mode">
+            <option value="type">File Type</option>
+            <option value="extension">Extension</option>
+            <option value="date">Upload Date</option>
+            <option value="custom">Custom</option>
+          </select>
+        </label>
+        <label id="sort-by-label">Sort by:
+          <select id="sort-mode">
+            <option value="name">Name</option>
+            <option value="size">Size</option>
+            <option value="date">Date</option>
+          </select>
+        </label>
+        <label id="lang-label">Language:
+          <select id="lang-select">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="am">አማርኛ</option>
+          </select>
+        </label>
+        <label id="darkmode-toggle">
+          <input type="checkbox" id="darkmode-checkbox"> 🌙 Dark Mode
+        </label>
+      </div>
+      <div id="file-summary"></div>
+      <div id="file-list"></div>
+      <div class="buttons">
+        <button id="organize-btn" type="button">Organize & Zip</button>
+        <button id="clear-btn" type="button">Clear List</button>
+        <button id="save-session-btn" type="button">💾 Save Session</button>
+        <button id="load-session-btn" type="button">📂 Load Session</button>
+      </div>
+      <div id="zip-password-container">
+        <label id="zip-password-label" for="zip-password">ZIP Password:</label>
+        <input type="password" id="zip-password" placeholder="Optional">
+      </div>
+      <div id="progress-container" style="display:none;">
+        <progress id="zip-progress" value="0" max="100"></progress>
+        <span id="progress-text"></span>
+      </div>
+      <a id="download-link" style="display:none;" download="organized_files.zip">Download Organized Files</a>
+      <div id="qr-container" style="display:none;">
+        <p id="qr-label">Scan QR to download on mobile:</p>
+        <canvas id="qr-code"></canvas>
+      </div>
+    </div>
+    <div id="donate">
+      <a href="https://github.com/sponsors/endakmew" target="_blank" class="sponsor-button">❤️ Sponsor Me on GitHub</a>
+      <a href="https://ko-fi.com/" target="_blank" class="donate-button">☕ Buy Me a Coffee</a>
+    </div>
+  </main>
+  <footer>
+    <p>Created by <a href="https://github.com/endakmew" target="_blank">Endakmew</a></p>
+  </footer>
+  <script src="jszip.min.js"></script>
+  <script src="sortable.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
